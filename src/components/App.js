@@ -2,10 +2,11 @@ import AddMedicationForm from "./AddMedicationForm";
 import Header from "./Header";
 import MedicationList from "./MedicationList";
 import { useState } from "react";
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import '../styles/App.css';
 import Reminder from "./Reminder";
 import AddReminder from "./AddReminder";
+import Home from "./Home";
 
 function App() {
   const [medications, setMedications] = useState([
@@ -39,12 +40,16 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <MedicationList medications={medications} />
-      <AddMedicationForm addMedication={addMedication} />
-      <Reminder reminder={reminders}/>
-      <AddReminder addReminder={addReminder} />
-      
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" Component={Home} />
+          <Route path="/medications" element={<MedicationList medications={medications}/>} />
+          <Route path="/add-medication" element={<AddMedicationForm addMedication={addMedication} />} />
+          <Route path="/reminders" element={<Reminder reminder={reminders}/>} />
+          <Route path="/add-reminder" element={<AddReminder addReminder={addReminder} />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
