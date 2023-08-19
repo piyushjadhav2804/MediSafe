@@ -1,0 +1,21 @@
+/* MedicationList.js */
+.medication-list {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+}
+
+.medication-list h2 {
+  margin-top: 0;
+}
+
+.medication-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.medication-list li {
+  padding: 5px 0;
+  border-bottom: 1px solid #ccc;
+}
