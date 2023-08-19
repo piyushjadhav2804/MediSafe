@@ -8,7 +8,7 @@ const AddReminder = ({ addReminder }) => {
     event.preventDefault();
 
     if (reminder.trim() !== "") {
-      AddReminder(addReminder);
+      addReminder(reminder); // Use 'addReminder' instead of 'AddReminder'
       setReminder("");
     }
   }
