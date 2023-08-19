@@ -12,9 +12,9 @@ import "../styles/App.css";
 function App() {
   // State for medications and reminders
   const [medications, setMedications] = useState([
-    { id: 1, name: "Medication A" },
-    { id: 2, name: "Medication B" },
-    { id: 3, name: "Medication C" },
+    { id: 1, name: "Paracetamol Dolo-650" },
+    { id: 2, name: "Thyrox-25" },
+    { id: 3, name: "Amoxicillin 500" },
   ]);
 
   const [reminders, setReminders] = useState([
