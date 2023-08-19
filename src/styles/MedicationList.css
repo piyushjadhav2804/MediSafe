@@ -16,6 +16,27 @@
 }
 
 .medication-list li {
-  padding: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
   border-bottom: 1px solid #ccc;
+}
+
+.medication-list li:last-child {
+  border-bottom: none;
+}
+
+.medication-list button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.medication-list button:hover {
+  background-color: #c82333;
 }
