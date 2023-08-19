@@ -15,6 +15,14 @@ A simple web application to help users manage their medications and set reminder
 - React Router
 - CSS (for styling)
 
+## Screenshots
+
+![Kratin-1](https://github.com/piyushjadhav2804/MediSafe/assets/71430828/c65c5fab-1ca0-44c7-b7c8-b188adb4f8d7)
+![Kratin-2](https://github.com/piyushjadhav2804/MediSafe/assets/71430828/e83e7234-9f40-483a-b89a-dca1d7ae8e14)
+![Kratin-3](https://github.com/piyushjadhav2804/MediSafe/assets/71430828/683aadbb-2fd3-44fa-9ff7-120b6065507b)
+![Kratin-4](https://github.com/piyushjadhav2804/MediSafe/assets/71430828/016124ed-7164-4622-b258-6959f8d29a93)
+![Kratin-5](https://github.com/piyushjadhav2804/MediSafe/assets/71430828/719d147f-4b67-4c30-925a-c280219205c1)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
