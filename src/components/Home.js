@@ -1,3 +1,4 @@
+//Home Component
 import React from "react";
 
 function Home() {

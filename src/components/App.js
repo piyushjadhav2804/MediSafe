@@ -1,3 +1,4 @@
+//App.js
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./Header";
@@ -9,6 +10,7 @@ import Home from "./Home";
 import "../styles/App.css";
 
 function App() {
+  // State for medications and reminders
   const [medications, setMedications] = useState([
     { id: 1, name: "Medication A" },
     { id: 2, name: "Medication B" },
@@ -21,6 +23,7 @@ function App() {
     { id: 3, text: "Reminder C" },
   ]);
 
+  // Function to add medication
   const addMedication = (medicationName) => {
     const newMedication = {
       id: new Date().getTime(),
@@ -29,6 +32,7 @@ function App() {
     setMedications([...medications, newMedication]);
   };
 
+  // Function to remove medication
   const removeMedication = (medicationId) => {
     const updatedMedications = medications.filter(
       (medication) => medication.id !== medicationId
@@ -36,6 +40,7 @@ function App() {
     setMedications(updatedMedications);
   };
 
+  // Function to add reminder
   const addReminder = (reminderText) => {
     const newReminder = {
       id: new Date().getTime(),
@@ -44,6 +49,7 @@ function App() {
     setReminders([...reminders, newReminder]);
   };
 
+  // Function to remove reminder
   const removeReminder = (reminderId) => {
     const updatedReminders = reminders.filter(
       (reminder) => reminder.id !== reminderId

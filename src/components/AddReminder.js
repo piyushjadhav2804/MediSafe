@@ -2,13 +2,16 @@ import React, { useState } from "react";
 import "../styles/AddMedicationForm.css";
 
 const AddReminder = ({ addReminder }) => {
+  // State for reminder text
   const [reminder, setReminder] = useState("");
 
+  // Function to handle form submission
   function handleSubmit(event) {
     event.preventDefault();
 
     if (reminder.trim() !== "") {
-      addReminder(reminder); // Use 'addReminder' instead of 'AddReminder'
+      // Call the addReminder function
+      addReminder(reminder);
       setReminder("");
     }
   }
