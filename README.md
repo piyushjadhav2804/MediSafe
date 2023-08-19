@@ -1,3 +1,20 @@
+# MediSafe - Medicine Reminder App
+
+A simple web application to help users manage their medications and set reminders.
+
+## Features
+
+- Add, view, and remove medications.
+- Set reminders for medication schedules.
+- View upcoming reminders.
+- User-friendly interface.
+
+## Technologies Used
+
+- React
+- React Router
+- CSS (for styling)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
