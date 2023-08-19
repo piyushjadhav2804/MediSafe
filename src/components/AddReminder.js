@@ -2,17 +2,16 @@ import React, { useState } from "react";
 import "../styles/AddMedicationForm.css";
 
 const AddReminder = ({ addReminder }) => {
-  // State for reminder text
-  const [reminder, setReminder] = useState("");
+  const [reminderText, setReminderText] = useState("");
+  const [reminderTime, setReminderTime] = useState(""); // Store reminder time
 
-  // Function to handle form submission
   function handleSubmit(event) {
     event.preventDefault();
 
-    if (reminder.trim() !== "") {
-      // Call the addReminder function
-      addReminder(reminder);
-      setReminder("");
+    if (reminderText.trim() !== "" && reminderTime) {
+      addReminder(reminderText, new Date(reminderTime).toISOString());
+      setReminderText("");
+      setReminderTime("");
     }
   }
 
@@ -23,8 +22,14 @@ const AddReminder = ({ addReminder }) => {
         <input
           type="text"
           placeholder="Reminder text"
-          value={reminder}
-          onChange={(event) => setReminder(event.target.value)}
+          value={reminderText}
+          onChange={(event) => setReminderText(event.target.value)}
+        />
+        <input
+          type="datetime-local" // Use datetime-local input type
+          placeholder="Reminder time"
+          value={reminderTime}
+          onChange={(event) => setReminderTime(event.target.value)}
         />
         <button type="submit">ADD</button>
       </form>

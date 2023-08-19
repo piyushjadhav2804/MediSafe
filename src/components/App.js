@@ -1,4 +1,3 @@
-//App.js
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./Header";
@@ -10,20 +9,30 @@ import Home from "./Home";
 import "../styles/App.css";
 
 function App() {
-  // State for medications and reminders
   const [medications, setMedications] = useState([
-    { id: 1, name: "Paracetamol Dolo-650" },
-    { id: 2, name: "Thyrox-25" },
-    { id: 3, name: "Amoxicillin 500" },
+    { id: 1, name: "Medication A" },
+    { id: 2, name: "Medication B" },
+    { id: 3, name: "Medication C" },
   ]);
 
   const [reminders, setReminders] = useState([
-    { id: 1, text: "Reminder A" },
-    { id: 2, text: "Reminder B" },
-    { id: 3, text: "Reminder C" },
+    {
+      id: 1,
+      text: "Reminder A",
+      time: new Date("2023-08-25T12:00:00").toISOString(),
+    },
+    {
+      id: 2,
+      text: "Reminder B",
+      time: new Date("2023-08-26T15:30:00").toISOString(),
+    },
+    {
+      id: 3,
+      text: "Reminder C",
+      time: new Date("2023-08-27T10:00:00").toISOString(),
+    },
   ]);
 
-  // Function to add medication
   const addMedication = (medicationName) => {
     const newMedication = {
       id: new Date().getTime(),
@@ -32,7 +41,6 @@ function App() {
     setMedications([...medications, newMedication]);
   };
 
-  // Function to remove medication
   const removeMedication = (medicationId) => {
     const updatedMedications = medications.filter(
       (medication) => medication.id !== medicationId
@@ -40,16 +48,15 @@ function App() {
     setMedications(updatedMedications);
   };
 
-  // Function to add reminder
-  const addReminder = (reminderText) => {
+  const addReminder = (reminderText, reminderTime) => {
     const newReminder = {
       id: new Date().getTime(),
       text: reminderText,
+      time: reminderTime,
     };
     setReminders([...reminders, newReminder]);
   };
 
-  // Function to remove reminder
   const removeReminder = (reminderId) => {
     const updatedReminders = reminders.filter(
       (reminder) => reminder.id !== reminderId
@@ -62,7 +69,10 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route
+            path="/"
+            element={<Home reminders={reminders} medications={medications} />}
+          />
           <Route
             path="/medications"
             element={
